@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Login from './components/Auth/Login';
+import { Route, Routes } from 'react-router-dom';
 import Register from './components/Auth/Register';
 import BookingForm from './components/Booking/BookingForm';
 import BookingList from './components/Booking/BookingList';
@@ -9,13 +8,12 @@ import PaymentForm from './components/Payment/PaymentForm';
 const App = () => {
   return (
     <div className="App">
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/bookings/new" component={BookingForm} />
-        <Route path="/bookings" component={BookingList} />
-        <Route path="/payment" component={PaymentForm} />
-      </Switch>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/bookings/new" element={<BookingForm />} />
+        <Route path="/bookings" element={<BookingList />} />
+        <Route path="/payment" element={<PaymentForm />} />
+      </Routes>
     </div>
   );
 };

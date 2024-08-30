@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { createBooking } from '../../api';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const BookingForm = () => {
   const [date, setDate] = useState('');
   const [ticketType, setTicketType] = useState('');
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
